@@ -27,7 +27,7 @@ public class AdvancedSearchSteps extends Base {
             click(advancedSearch.moreFiltersButton);
             click(advancedSearch.allStarHost);
 
-       // selectCarAndVehicleMakes
+       // selecting Car and Vehicle Makes
             click(advancedSearch.vehicleTypesButton);
             click(advancedSearch.car);
 
@@ -37,15 +37,15 @@ public class AdvancedSearchSteps extends Base {
             waitSomeTime(2L);
             select.selectByVisibleText("Toyota");
 
+        // adjusting the Years on slider bar
             scrollDown(advancedSearch.yearText);
-
             Actions move = new Actions(MyDriver.get());
             Action actionLeft1 = (Action) move.dragAndDropBy(advancedSearch.leftYearSlider, 430, 0).release().build();
             ((Action) actionLeft1).perform();
 
             Action actionLeft = (Action) move.dragAndDropBy(advancedSearch.rightYearSlider, -15, 0).release().build();
             ((Action) actionLeft).perform();
-
+           // selecting Transmission
             select = new Select(advancedSearch.transmission);
             waitSomeTime(2L);
             select.selectByVisibleText("Automatic");
@@ -75,7 +75,6 @@ public class AdvancedSearchSteps extends Base {
 
             click(advancedSearch.viewResult);
             waitSomeTime(2L);
-
             click(advancedSearch.bookInstantly);
             click(advancedSearch.viewResult2);
             waitSomeTime(2L);
@@ -83,6 +82,7 @@ public class AdvancedSearchSteps extends Base {
             click(advancedSearch.deliveryButton);
             move = new Actions(MyDriver.get());
 
+        //  adjusting Delivery Option
             actionRight = move.dragAndDropBy(advancedSearch.deliveryRightSlider, -105, 234).build();
             actionRight.perform();
             waitSomeTime(2L);
